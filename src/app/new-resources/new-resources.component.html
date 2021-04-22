@@ -1,0 +1,140 @@
+<div class="container">
+  <form novalidate (ngSubmit)="onSubmit()" #f="ngForm">
+
+    <div class="form-group">
+      <label>Language</label>
+      <select class="form-control" name="typeid" [(ngModel)]="model.typeid">
+        <option value="">Please select a language</option>
+        <option *ngFor="let lang of resourceValue" [value]="lang.typeid">{{lang.typename}}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-group" [ngClass]="{
+          'has-danger': name.invalid && (name.dirty || name.touched),
+          'has-success': name.valid && (name.dirty || name.touched)
+     }">
+      <label>Full Name / Company Name</label>
+      <input type="text" class="form-control" name="name" [(ngModel)]="model.name" required #name="ngModel">
+      <div class="form-control-feedback" *ngIf="name.errors && (name.dirty || name.touched)">
+        <p *ngIf="name.errors.required">Name is required</p>
+      </div>
+    </div>
+
+    <div class="form-group" [ngClass]="{
+          'has-danger': contactpersonname.invalid && (contactpersonname.dirty || contactpersonname.touched),
+          'has-success': contactpersonname.valid && (contactpersonname.dirty || contactpersonname.touched)
+     }">
+      <label>Contact Person Name</label>
+      <input type="text" class="form-control" name="contactpersonname" [(ngModel)]="model.contactpersonname" required
+        #contactpersonname="ngModel">
+      <div class="form-control-feedback"
+        *ngIf="contactpersonname.errors && (contactpersonname.dirty || contactpersonname.touched)">
+        <p *ngIf="contactpersonname.errors.required">Contact Person name is required</p>
+      </div>
+    </div>
+
+
+    <div class="form-group" [ngClass]="{
+   'has-danger': contact.invalid && (contact.dirty || contact.touched),
+   'has-success': contact.valid && (contact.dirty || contact.touched)
+}">
+      <label>Contact</label>
+      <input type="text" class="form-control" name="contact" [(ngModel)]="model.contact" required #contact="ngModel">
+      <div class="form-control-feedback" *ngIf="contact.errors && (contact.dirty || contact.touched)">
+        <p *ngIf="contact.errors.required">Contact is required</p>
+      </div>
+    </div>
+
+
+    <div class="form-group" [ngClass]="{
+'has-danger': altercontact.invalid && (altercontact.dirty || altercontact.touched),
+'has-success': altercontact.valid && (altercontact.dirty || altercontact.touched)
+}">
+      <label>Alternet Contact Number</label>
+      <input type="text" class="form-control" name="altercontact" [(ngModel)]="model.altercontact" required
+        #altercontact="ngModel">
+      <div class="form-control-feedback" *ngIf="altercontact.errors && (altercontact.dirty || altercontact.touched)">
+        <p *ngIf="altercontact.errors.required">Alter Contact is required</p>
+      </div>
+    </div>
+
+
+    <div class="form-group" [ngClass]="{
+          'has-danger': email.invalid && (email.dirty || email.touched),
+          'has-success': email.valid && (email.dirty || email.touched)
+     }">
+      <label>Email</label>
+      <input type="email" class="form-control" name="email" [(ngModel)]="model.email" required pattern="[^ @]*@[^ @]*"
+        #email="ngModel">
+      <div class="form-control-feedback" *ngIf="email.errors && (email.dirty || email.touched)">
+        <p *ngIf="email.errors.required">Email is required</p>
+        <p *ngIf="email.errors.pattern">Email must contain at least the @ character</p>
+      </div>
+    </div>
+
+
+    <div class="form-group" [ngClass]="{
+    'has-danger': website.invalid && (website.dirty || website.touched),
+    'has-success': website.valid && (website.dirty || website.touched)
+    }">
+      <label>website</label>
+      <input type="text" class="form-control" name="website" [(ngModel)]="model.website" required #website="ngModel">
+      <div class="form-control-feedback" *ngIf="website.errors && (website.dirty || website.touched)">
+        <p *ngIf="website.errors.required">website is required</p>
+      </div>
+    </div>
+
+
+    <div class="form-group" [ngClass]="{
+    'has-danger': address.invalid && (address.dirty || address.touched),
+    'has-success': address.valid && (address.dirty || address.touched)
+    }">
+      <label>address</label>
+      <input type="text" class="form-control" name="address" [(ngModel)]="model.address" required #address="ngModel">
+      <div class="form-control-feedback" *ngIf="address.errors && (address.dirty || address.touched)">
+        <p *ngIf="address.errors.required">address is required</p>
+      </div>
+    </div>
+
+    <div class="form-group" [ngClass]="{
+    'has-danger': city.invalid && (city.dirty || city.touched),
+    'has-success': city.valid && (city.dirty || city.touched)
+    }">
+      <label>city</label>
+      <input type="text" class="form-control" name="city" [(ngModel)]="model.city" required #city="ngModel">
+      <div class="form-control-feedback" *ngIf="city.errors && (city.dirty || city.touched)">
+        <p *ngIf="city.errors.required">city is required</p>
+      </div>
+    </div>
+
+
+    <div class="form-group" [ngClass]="{
+    'has-danger': state.invalid && (state.dirty || state.touched),
+    'has-success': state.valid && (state.dirty || state.touched)
+    }">
+      <label>state</label>
+      <input type="text" class="form-control" name="state" [(ngModel)]="model.state" required #state="ngModel">
+      <div class="form-control-feedback" *ngIf="state.errors && (state.dirty || state.touched)">
+        <p *ngIf="state.errors.required">state is required</p>
+      </div>
+    </div>
+
+
+    <div class="form-group" [ngClass]="{
+    'has-danger': country.invalid && (country.dirty || country.touched),
+    'has-success': country.valid && (country.dirty || country.touched)
+    }">
+      <label>country</label>
+      <input type="text" class="form-control" name="country" [(ngModel)]="model.country" required #country="ngModel">
+      <div class="form-control-feedback" *ngIf="country.errors && (country.dirty || country.touched)">
+        <p *ngIf="country.errors.required">country is required</p>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="f.invalid">Submit
+    </button>
+
+    <pre>{{f.value | json}}</pre>
+  </form>
+</div>

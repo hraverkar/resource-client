@@ -10,13 +10,17 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NewResourcesComponent } from './new-resources/new-resources.component';
+import { FormsModule }   from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    NewResourcesComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +28,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     BrowserAnimationsModule,
     MaterialModule,
     NgbModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
