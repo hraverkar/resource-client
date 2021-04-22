@@ -1,0 +1,21 @@
+<div class="fixed-bottom">
+<mat-toolbar>
+  <span class="example-spacer"></span>
+  
+  <button color="primary" [matMenuTriggerFor]="menu" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <mat-icon>share</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-menu #menu="matMenu" yPosition="above">
+  <button mat-menu-item>
+    <i class="fab fa-linkedin-in"></i>
+  </button>
+  <button mat-menu-item>
+    <i class="fab fa-github"></i>
+  </button>
+  <button mat-menu-item>
+    <i class="fab fa-facebook"></i>
+  </button>
+</mat-menu>
+</div>
